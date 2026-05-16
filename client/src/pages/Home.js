@@ -3,33 +3,65 @@ export const Home = () => {
         <div class="home-page fade-in">
             <nav class="navbar">
                 <div class="container">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo">
                         HireSight<span>AI</span>
-                    </div>
+                    </a>
                     <div class="nav-links">
-                        <a href="#features">Features</a>
-                        <button class="btn btn-primary" onclick="app.router.navigateTo('/analyzer')">Start Analysis</button>
+                        <a href="#features" class="nav-link">Platform</a>
+                        <a href="#solutions" class="nav-link">Solutions</a>
+                        <button class="btn btn-primary" onclick="app.router.navigateTo('/analyzer')">Get Started</button>
                     </div>
                 </div>
             </nav>
 
             <header class="hero">
                 <div class="container">
-                    <div class="badge">AI-Powered ATS Intelligence</div>
-                    <h1>Analyze. Match. <span class="gradient-text">Get Hired.</span></h1>
-                    <p class="hero-desc">The professional grade resume analyzer that thinks like a recruiter. Land your dream role with precision.</p>
+                    <div class="hero-badge">Next-Gen ATS Intelligence</div>
+                    <h1>Your Resume, Optimized for <br/><span class="gradient-text">The Modern Workforce.</span></h1>
+                    <p class="hero-desc">Bypass restrictive ATS filters and impress recruiters with AI-driven resume calibration and semantic matching.</p>
                     <div class="hero-actions">
-                        <button class="btn btn-primary btn-lg" onclick="app.router.navigateTo('/analyzer')">Analyze My Resume</button>
+                        <button class="btn btn-primary btn-lg" onclick="app.router.navigateTo('/analyzer')">Start Analysis Now</button>
+                        <button class="btn btn-secondary btn-lg">View Sample Report</button>
                     </div>
                 </div>
             </header>
 
             <section class="trusted-by">
                 <div class="container">
-                    <p>Trusted by professionals from</p>
+                    <p>Powering career growth at</p>
                     <div class="logo-grid">
-                        <span>Google</span><span>Meta</span><span>Amazon</span><span>Stripe</span>
+                        <span>Google</span>
+                        <span>Meta</span>
+                        <span>Amazon</span>
+                        <span>Stripe</span>
+                        <span>Netflix</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features" id="features">
+                <div class="container py-xl">
+                    <div class="section-header center mb-3xl">
+                        <h2 class="gradient-text">Engineered for Success</h2>
+                        <p class="max-600 center">Deep-tech features designed by AI engineers to give you an unfair advantage in the job market.</p>
+                    </div>
+                    <div class="grid grid-3">
+                        <div class="card feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h3>ATS Ghosting Detection</h3>
+                            <p class="small">Identify specific sections causing parsing errors in legacy ATS software.</p>
+                        </div>
+                        <div class="card feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Semantic Match Engine</h3>
+                            <p class="small">Go beyond keywords. Our AI understands your impact and career trajectory.</p>
+                        </div>
+                        <div class="card feature-card">
+                            <div class="feature-icon">✨</div>
+                            <h3>Real-time Calibration</h3>
+                            <p class="small">Interactive suggestions to rephrase your experience for target roles.</p>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,60 +1,92 @@
 .hero {
-    padding: var(--space-2xl) 0;
+    padding: 180px 0 100px;
+    position: relative;
     text-align: center;
-    background: radial-gradient(circle at top center, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
 }
 
-.hero .badge {
+.hero .container {
+    max-width: 900px;
+}
+
+.hero-badge {
     display: inline-flex;
     align-items: center;
-    padding: 0.5rem 1.25rem;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
+    padding: 6px 14px;
     border-radius: var(--radius-full);
-    font-size: 0.875rem;
-    font-weight: 600;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
     color: var(--brand-primary);
-    margin-bottom: var(--space-xl);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-lg);
+    animation: slideDown 0.5s ease-out;
 }
 
 .hero h1 {
-    max-width: 900px;
-    margin: 0 auto var(--space-md);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-desc {
-    max-width: 650px;
-    margin: 0 auto var(--space-xl);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
     gap: var(--space-md);
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
+/* Trusted By Grid */
 .trusted-by {
-    padding: var(--space-xl) 0;
+    padding: var(--space-3xl) 0;
     border-top: 1px solid var(--border-color);
-    margin-top: var(--space-2xl);
-    text-align: center;
 }
 
 .trusted-by p {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     color: var(--text-muted);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    text-align: center;
 }
 
 .logo-grid {
     display: flex;
     justify-content: center;
-    gap: var(--space-2xl);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3xl);
     opacity: 0.5;
     filter: grayscale(1);
-    font-weight: 700;
-    font-size: 1.25rem;
+    transition: var(--transition-normal);
+}
+
+.logo-grid:hover {
+    opacity: 0.8;
+    filter: grayscale(0);
+}
+
+.logo-grid span {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

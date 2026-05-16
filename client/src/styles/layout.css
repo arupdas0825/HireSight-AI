@@ -1,12 +1,12 @@
 .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-lg);
 }
 
-.py-xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
-.py-lg { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.py-xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
+.py-2xl { padding-top: var(--space-page); padding-bottom: var(--space-page); }
 
 .grid {
     display: grid;
@@ -16,14 +16,29 @@
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-@media (max-width: 1024px) {
-    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
 }
 
-.flex { display: flex; align-items: center; gap: var(--space-md); }
-.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .container { padding: 0 var(--space-md); }
+}
 
 .section {
-    position: relative;
-    overflow: hidden;
+    padding: var(--space-page) 0;
 }

@@ -1,43 +1,76 @@
 .card {
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     padding: var(--space-xl);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .card:hover {
-    border-color: var(--brand-primary);
-    box-shadow: var(--shadow-md);
+    border-color: var(--border-bright);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
 }
 
-.card-glass {
-    background: var(--bg-glass);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.feature-card {
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
 }
 
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    display: inline-block;
+}
+
+.p-lg { padding: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-3xl { margin-bottom: var(--space-3xl); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.max-600 { max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Primary Button Styling */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
+    padding: 10px 20px;
     border-radius: var(--radius-md);
-    transition: var(--transition-normal);
-    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    gap: 8px;
 }
 
 .btn-primary {
-    background: var(--brand-gradient);
-    color: var(--text-inverse);
-    box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+    background: var(--brand-primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+    background: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 
-.btn-lg { padding: 1rem 2.5rem; font-size: 1.125rem; }
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-bright);
+}
+
+.btn-lg {
+    padding: 14px 28px;
+    font-size: 1.0625rem;
+}

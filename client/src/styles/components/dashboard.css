@@ -1,8 +1,8 @@
 .dashboard-layout {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: var(--space-xl);
-    min-height: calc(100vh - 160px);
+    grid-template-columns: 380px 1fr;
+    gap: var(--space-2xl);
+    min-height: calc(100vh - 200px);
 }
 
 .upload-area {

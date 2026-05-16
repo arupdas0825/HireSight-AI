@@ -3,14 +3,29 @@ import { UploadService } from '../services/uploadService.js';
 export const Analyzer = () => {
     return `
         <div class="analyzer-page fade-in">
-            <div class="container py-xl">
-                <div class="dashboard-header mb-xl">
-                    <button class="btn btn-ghost" onclick="app.router.navigateTo('/')">← Back to Home</button>
-                    <div class="logo-sm mb-md" onclick="app.router.navigateTo('/')" style="cursor: pointer;">
-                        <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo-sm">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="/" class="logo">
+                        <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo">
                         HireSight<span>AI</span>
+                    </a>
+                    <div class="nav-links">
+                        <button class="btn btn-ghost" onclick="app.router.navigateTo('/')">← Exit Workspace</button>
                     </div>
-                    <h2>Resume Intelligence Dashboard</h2>
+                </div>
+            </nav>
+
+            <div class="container" style="margin-top: 100px; margin-bottom: 50px;">
+                <div class="workspace-header mb-2xl">
+                    <div class="flex-between">
+                        <div>
+                            <div class="hero-badge" style="margin-bottom: 8px;">Workspace</div>
+                            <h2>Resume Intelligence Dashboard</h2>
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" id="save-report-btn">Save Draft</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="dashboard-layout">
