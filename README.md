@@ -1,114 +1,176 @@
-# HireSight AI 🚀
-### Premium AI-Powered ATS Resume Intelligence Platform
+<div align="center">
 
-HireSight AI is an enterprise-grade SaaS platform designed to bridge the gap between candidates and Applicant Tracking Systems (ATS). Using advanced NLP and machine learning, HireSight AI provides deep insights into resume performance, keyword optimization, and semantic job matching.
+  <img src="client/public/logo.png" alt="HireSight AI Logo" width="120" />
 
-![HireSight AI Preview](https://img.shields.io/badge/Status-In_Development-blueviolet?style=for-the-badge)
-![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Vite](https://img.shields.io/badge/Frontend-Vite_JS-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Python](https://img.shields.io/badge/Language-Python_3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  # HireSight AI
+  ### The Flagship AI-Powered ATS Intelligence Platform
 
----
+  [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+  [![Vite](https://img.shields.io/badge/Frontend-Vite_JS-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![Python](https://img.shields.io/badge/Engine-Python_3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+  [![Responsive](https://img.shields.io/badge/UI-Responsive-FF4081?style=for-the-badge)](https://hiresight-ai.vercel.app)
+  
+  **HireSight AI** is a professional-grade ATS Resume Analyzer designed to empower candidates with recruiter-level intelligence. Built with a high-performance FastAPI backend and a cinematic, app-like frontend experience.
 
-## ✨ Key Features
-
-- **🔍 Intelligent ATS Analysis**: Detects how well your resume is parsed by modern enterprise ATS systems.
-- **📈 Real-time Scoring**: Provides a compatibility score based on specific job descriptions.
-- **🧠 AI-Driven Insights**: Identifies missing keywords, strengths, and weaknesses using LLM intelligence.
-- **📄 High-Fidelity Parsing**: Extracts text from complex PDF layouts with semantic structure preservation.
-- **⚡ Async Architecture**: Built on a scalable, asynchronous FastAPI backend for high-concurrency processing.
-- **🎨 Premium UI/UX**: A sleek, dark-themed, glassmorphic interface designed for a seamless user experience.
+</div>
 
 ---
 
-## 🛠️ Technology Stack
+## 📸 Project Preview
 
-### **Frontend**
-- **Core**: Vanilla JavaScript (ES6+)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: Modern CSS (Custom Design System, Glassmorphism)
+<div align="center">
+  <p><i>Premium Workspace & Analysis Dashboard</i></p>
+  
+  <!-- Replace with actual screenshots -->
+  <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-landing.png" alt="Landing Page" width="800" style="border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);" />
+  
+  <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+    <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-dashboard.png" alt="Analysis Dashboard" width="48%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
+    <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-mobile.png" alt="Mobile Experience" width="48%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
+  </div>
 
-### **Backend**
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
-- **Validation**: [Pydantic v2](https://docs.pydantic.dev/)
-- **Server**: [Uvicorn](https://www.uvicorn.org/)
-- **Parsing**: `pdfplumber` for robust PDF text extraction
-
-### **AI & NLP** (Engineered for scalability)
-- **Intelligence**: Integrated with OpenAI / Groq API support
-- **Processing**: `spaCy` & `scikit-learn` for semantic similarity and keyword analysis
-
----
-
-## 🚀 Getting Started
-
-### **Prerequisites**
-- **Node.js**: v18+
-- **Python**: v3.11+
-- **Git**
-
-### **Installation**
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/arupdas0825/HireSight-AI.git
-   cd hiresight-ai
-   ```
-
-2. **Setup Environment Variables**
-   Create a `.env` file in the `server` directory:
-   ```env
-   OPENAI_API_KEY=your_api_key_here
-   GROQ_API_KEY=your_api_key_here
-   PORT=5000
-   ```
-
-3. **Install All Dependencies**
-   The root project includes a unified installer for both Frontend and Backend:
-   ```bash
-   npm run install-all
-   ```
-
-### **Development**
-
-Launch both the Vite frontend and FastAPI backend concurrently:
-```bash
-npm run dev
-```
-
-- **Frontend**: `http://localhost:5173`
-- **Backend API**: `http://localhost:5000`
-- **API Documentation**: `http://localhost:5000/docs` (Swagger UI)
+  <p><i>[ Screenshots are placeholders - Update with real visuals ]</i></p>
+</div>
 
 ---
 
-## 📂 Project Structure
+## 🚀 About the Project
+
+In the modern job market, **75% of resumes are never seen by a human recruiter**. They are filtered out by legacy Applicant Tracking Systems (ATS) due to formatting errors or keyword mismatches. 
+
+**HireSight AI** solves this by providing:
+- **Semantic Intelligence**: Using NLP to understand the *impact* of your experience, not just keywords.
+- **Recruiter Calibration**: Analyzing your resume against specific Job Descriptions (JD) to calculate match scores.
+- **Immediate Optimization**: Real-time suggestions to rephrase and restructure content for maximum ATS compatibility.
+
+---
+
+## ✨ Core Features
+
+- **🔍 Intelligent ATS Analysis**: Detects parsing vulnerabilities in complex PDF/DOCX layouts.
+- **🎯 Semantic Match Engine**: High-fidelity similarity scoring between Resume and Job Description.
+- **📈 Real-time Key-skill Detection**: Identifies missing hard and soft skills required for the target role.
+- **🎨 Premium UI/UX**: An Apple-inspired, glassmorphic workspace designed for a focused user experience.
+- **📱 App-like Mobile Flow**: Fully optimized mobile web experience with tactile interactions and PWA support.
+- **⚡ Async Processing**: Scalable FastAPI infrastructure for lightning-fast file ingestion and analysis.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | Vite, Vanilla JavaScript (ES6+), Modern CSS (Design System) |
+| **Backend** | FastAPI (Python 3.12), Pydantic v2, Uvicorn |
+| **AI / NLP** | spaCy, scikit-learn, Sentence Transformers, Groq/OpenAI |
+| **Parsing** | pdfplumber, python-multipart, aiofiles |
+| **Deployment** | Vercel (Frontend), Render / DigitalOcean (Backend) |
+
+---
+
+## 📐 Architecture Overview
+
+The project follows a modular, service-oriented architecture designed for scalability and maintainability.
 
 ```text
 hiresight-ai/
-├── client/              # Vite + Vanilla JS Frontend
-│   ├── src/             # Application source code
-│   └── public/          # Static assets
-├── server/              # FastAPI Python Backend
+├── client/                 # Vite Frontend Application
+│   ├── src/
+│   │   ├── pages/          # View components (Home, Analyzer)
+│   │   ├── services/       # State, Router, and API logic
+│   │   └── styles/         # Modular Design System (tokens, components)
+│   └── public/             # Static brand assets & logos
+├── server/                 # FastAPI Intelligence Backend
 │   ├── app/
-│   │   ├── api/         # API Route definitions
-│   │   ├── core/        # Configuration & Security
-│   │   ├── services/    # Business logic & Integrations
-│   │   └── ai/          # NLP & Intelligence engines
-│   └── requirements.txt # Python dependencies
-├── package.json         # Root orchestration (concurrent dev)
-└── .gitignore           # Global git exclusions
+│   │   ├── api/            # API Route definitions & endpoints
+│   │   ├── core/           # Config, Security, and Settings
+│   │   ├── services/       # Business logic (Parser, ATS, AI)
+│   │   └── ai/             # NLP Models & ML logic
+│   └── requirements.txt    # Python dependency manifest
+├── package.json            # Root orchestration (concurrent dev)
+└── .gitignore              # Multi-stack exclusion rules
 ```
 
 ---
 
-## 🛡️ Security
-This project uses `.env` files for secret management. Please ensure that no sensitive credentials are ever committed to version control. The `.gitignore` is pre-configured to exclude all `.env` files.
+## 💎 UI/UX Philosophy
+
+HireSight AI is built with a **"Product-First"** mindset. The design language is inspired by industry leaders like **Linear** and **Vercel**:
+- **Confident Typography**: Using 'Outfit' and 'Inter' for a bold, authoritative hierarchy.
+- **Visual Depth**: Subtle radial gradients, glassmorphism, and frosted surfaces for an immersive workspace.
+- **Tactile Mobile Experience**: Native-feeling interactions on mobile, including spring-based tap animations and floating navigation.
+
+---
+
+## 🛠️ Installation & Setup
+
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/arupdas0825/HireSight-AI.git
+cd hiresight-ai
+```
+
+### **2. Install Dependencies**
+The root directory includes a unified installer for both stacks:
+```bash
+npm run install-all
+```
+
+### **3. Environment Configuration**
+Create a `.env` file in the `server/` directory:
+```env
+OPENAI_API_KEY=your_key
+GROQ_API_KEY=your_key
+PORT=5000
+ENVIRONMENT=development
+```
+
+### **4. Launch the Platform**
+Run both the frontend and backend concurrently:
+```bash
+npm run dev
+```
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+- **Backend API**: [http://localhost:5000](http://localhost:5000)
+- **API Docs**: [http://localhost:5000/docs](http://localhost:5000/docs)
+
+---
+
+## 📡 API Overview
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/upload` | Uploads resume and returns extracted semantic text. |
+| `POST` | `/api/analyze` | Compares resume text vs. Job Description using AI. |
+| `GET` | `/api/health` | Backend status check. |
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] **AI Interview Assistant**: Generate tailored interview questions based on resume gaps.
+- [ ] **Multi-format Export**: Download ATS-optimized versions of your resume.
+- [ ] **Recruiter Dashboard**: Analytics for hiring managers to track top-matching candidates.
+- [ ] **Global Support**: Multilingual resume analysis and localization.
+
+---
+
+## 👨‍💻 Author
+
+**Arup Das**  
+*Full-Stack AI Developer*
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arupdas0825)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arup-das-825a0b25a)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://arup.dev)
 
 ---
 
 ## 📜 License
-Internal Development - All Rights Reserved.
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
-Created with ❤️ by [Arup Das](https://github.com/arupdas0825)
+<div align="center">
+  Built with ❤️ for the future of recruitment.
+</div>
