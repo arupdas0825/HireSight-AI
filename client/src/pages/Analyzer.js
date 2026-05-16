@@ -15,7 +15,7 @@ export const Analyzer = () => {
                 </div>
             </nav>
 
-            <div class="container" style="margin-top: 100px; margin-bottom: 50px;">
+            <div class="container workspace-container">
                 <div class="workspace-header mb-2xl">
                     <div class="flex-between">
                         <div>

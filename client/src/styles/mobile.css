@@ -1,0 +1,118 @@
+/* HireSight AI - Premium Mobile Experience Overrides */
+
+@media (max-width: 768px) {
+    :root {
+        --space-page: 2rem;
+        --radius-lg: 20px; /* More rounded for mobile */
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+        overscroll-behavior-y: none; /* Prevent elastic scroll for app feel */
+    }
+
+    /* Floating Glass Navbar for Mobile */
+    .navbar {
+        height: 64px;
+        margin: 12px;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-bright);
+        box-shadow: var(--shadow-lg);
+        top: env(safe-area-inset-top, 0);
+        width: calc(100% - 24px);
+        left: 0;
+        right: 0;
+    }
+
+    .navbar .container {
+        padding: 0 var(--space-lg);
+    }
+
+    .brand-logo { height: 24px; }
+    .logo { font-size: 1.1rem; }
+
+    /* Immersive Hero */
+    .hero {
+        padding: 140px 0 60px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+        padding: 0 var(--space-sm);
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        padding: 0 var(--space-md);
+    }
+
+    /* Stacked Dashboard */
+    .dashboard-layout {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+        margin-top: 20px;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        order: 2;
+    }
+
+    .main-content {
+        order: 1;
+    }
+
+    /* App-style Cards */
+    .card {
+        border-radius: var(--radius-lg);
+        padding: var(--space-lg);
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-color);
+    }
+
+    /* Large Touch Targets */
+    .btn {
+        width: 100%;
+        padding: 16px;
+        font-size: 1rem;
+        border-radius: var(--radius-md);
+    }
+
+    .btn-lg {
+        padding: 18px;
+    }
+
+    /* Tactile Interactions */
+    .btn:active {
+        transform: scale(0.96);
+        transition: transform 0.1s ease;
+    }
+
+    .upload-area {
+        padding: var(--space-xl) var(--space-md);
+        border-width: 1.5px;
+    }
+
+    /* Safe Area Spacing */
+    .analyzer-page {
+        padding-bottom: calc(var(--space-page) + env(safe-area-inset-bottom, 20px));
+    }
+
+    /* Custom Mobile Bottom Nav (Optional) */
+    .mobile-nav-shim {
+        height: 80px;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar { width: 100% !important; }
+}

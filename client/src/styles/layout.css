@@ -8,6 +8,18 @@
 .py-xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
 .py-2xl { padding-top: var(--space-page); padding-bottom: var(--space-page); }
 
+.workspace-container {
+    margin-top: 100px;
+    margin-bottom: var(--space-3xl);
+}
+
+@media (max-width: 768px) {
+    .workspace-container {
+        margin-top: 84px;
+        margin-bottom: var(--space-xl);
+    }
+}
+
 .grid {
     display: grid;
     gap: var(--space-lg);
