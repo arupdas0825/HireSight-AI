@@ -4,6 +4,10 @@ export const Analyzer = () => {
             <div class="container py-xl">
                 <div class="dashboard-header mb-xl">
                     <button class="btn btn-ghost" onclick="app.router.navigateTo('/')">← Back to Home</button>
+                    <div class="logo-sm mb-md" onclick="app.router.navigateTo('/')" style="cursor: pointer;">
+                        <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo-sm">
+                        HireSight<span>AI</span>
+                    </div>
                     <h2>Resume Intelligence Dashboard</h2>
                 </div>
                 <div class="dashboard-layout">

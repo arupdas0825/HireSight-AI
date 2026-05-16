@@ -18,9 +18,32 @@
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.brand-logo {
+    height: 32px;
+    width: auto;
+}
+
+.brand-logo-sm {
+    height: 24px;
+    width: auto;
+}
+
+.logo-sm {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
     color: var(--text-primary);
 }
 

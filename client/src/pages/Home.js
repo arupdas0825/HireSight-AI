@@ -3,7 +3,10 @@ export const Home = () => {
         <div class="home-page fade-in">
             <nav class="navbar">
                 <div class="container">
-                    <div class="logo">HireSight<span>AI</span></div>
+                    <div class="logo">
+                        <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo">
+                        HireSight<span>AI</span>
+                    </div>
                     <div class="nav-links">
                         <a href="#features">Features</a>
                         <button class="btn btn-primary" onclick="app.router.navigateTo('/analyzer')">Start Analysis</button>
