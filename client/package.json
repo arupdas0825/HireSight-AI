@@ -1,0 +1,14 @@
+{
+  "name": "hiresight-ai-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

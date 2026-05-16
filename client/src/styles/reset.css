@@ -1,0 +1,40 @@
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+}
+
+ul, ol { list-style: none; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button { cursor: pointer; }
+
+img {
+    max-width: 100%;
+    display: block;
+}

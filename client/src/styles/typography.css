@@ -1,0 +1,32 @@
+body {
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 5vw, 3rem); }
+h3 { font-size: 1.5rem; }
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.gradient-text {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.text-muted { color: var(--text-muted); font-size: 0.875rem; }
+.text-center { text-align: center; }

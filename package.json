@@ -1,0 +1,16 @@
+{
+  "name": "hiresight-ai",
+  "version": "1.0.0",
+  "description": "Premium AI-powered ATS Resume Analyzer",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "install-all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

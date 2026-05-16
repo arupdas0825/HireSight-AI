@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.py-xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+.py-lg { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 1024px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+.flex { display: flex; align-items: center; gap: var(--space-md); }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+.section {
+    position: relative;
+    overflow: hidden;
+}
