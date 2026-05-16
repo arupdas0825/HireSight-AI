@@ -30,5 +30,10 @@ export class Router {
     render(view) {
         const PageComponent = this.routes[view] || Home;
         this.appContainer.innerHTML = PageComponent();
+        
+        // Execute page-specific initialization if it exists
+        if (PageComponent.init) {
+            PageComponent.init();
+        }
     }
 }
