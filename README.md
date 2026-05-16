@@ -22,12 +22,8 @@
   <p><i>Premium Workspace & Analysis Dashboard</i></p>
   
   <!-- Replace with actual screenshots -->
-  <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-landing.png" alt="Landing Page" width="800" style="border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);" />
-  
-  <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
-    <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-dashboard.png" alt="Analysis Dashboard" width="48%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
-    <img src="https://raw.githubusercontent.com/arupdas0825/HireSight-AI/main/client/public/preview-mobile.png" alt="Mobile Experience" width="48%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
-  </div>
+ <img width="1846" height="867" alt="image" src="https://github.com/user-attachments/assets/8f4f476e-4e23-429d-8dda-a5b9539e5d87" />
+<img width="1627" height="862" alt="image" src="https://github.com/user-attachments/assets/368d8348-5f1a-460e-843f-3e1a4af19198" />
 
   <p><i>[ Screenshots are placeholders - Update with real visuals ]</i></p>
 </div>
