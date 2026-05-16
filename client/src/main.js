@@ -11,6 +11,11 @@ class App {
 
     init() {
         console.log('HireSight AI Initialized');
+        
+        // Apply persisted theme
+        const savedTheme = localStorage.getItem('hs-theme') || 'default';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
         this.router.handleRoute();
         window.addEventListener('popstate', () => this.router.handleRoute());
     }

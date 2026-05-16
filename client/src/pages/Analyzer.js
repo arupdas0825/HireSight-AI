@@ -32,6 +32,16 @@ export const Analyzer = () => {
                     <!-- Left Panel: Input -->
                     <div class="sidebar">
                         <div class="card p-lg mb-lg">
+                            <h3 class="mb-md">Personalization</h3>
+                            <div class="theme-selector mb-xl">
+                                <p class="text-muted small mb-sm">Select Workspace Theme</p>
+                                <div class="theme-options">
+                                    <div class="theme-opt active" data-t="default" title="Default Slate"></div>
+                                    <div class="theme-opt" data-t="gradient-black" title="Gradient Black"></div>
+                                    <div class="theme-opt" data-t="white" title="Pure White"></div>
+                                </div>
+                            </div>
+
                             <h3>Resume Ingestion</h3>
                             <p class="text-muted small mb-md">Upload your professional CV to begin deep analysis.</p>
                             
@@ -97,6 +107,26 @@ Analyzer.init = () => {
     const uploadSuccess = document.getElementById('upload-success');
     const fileNameDisplay = document.getElementById('uploaded-filename');
     const resetBtn = document.getElementById('reset-upload');
+    const themeOpts = document.querySelectorAll('.theme-opt');
+
+    // 0. Theme Initialization
+    const currentTheme = localStorage.getItem('hs-theme') || 'default';
+    setTheme(currentTheme);
+
+    themeOpts.forEach(opt => {
+        opt.addEventListener('click', () => {
+            const theme = opt.getAttribute('data-t');
+            setTheme(theme);
+        });
+    });
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('hs-theme', theme);
+        themeOpts.forEach(o => {
+            o.classList.toggle('active', o.getAttribute('data-t') === theme);
+        });
+    }
 
     // 1. Trigger File Picker
     dropZone.addEventListener('click', (e) => {

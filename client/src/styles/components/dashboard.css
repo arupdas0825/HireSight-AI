@@ -5,6 +5,33 @@
     min-height: calc(100vh - 200px);
 }
 
+.theme-options {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.theme-opt {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.theme-opt[data-t="default"] { background: #0f172a; border-color: rgba(255,255,255,0.1); }
+.theme-opt[data-t="gradient-black"] { background: #000000; border-color: rgba(255,255,255,0.1); }
+.theme-opt[data-t="white"] { background: #ffffff; border-color: rgba(0,0,0,0.1); }
+
+.theme-opt.active {
+    border-color: var(--brand-primary);
+    transform: scale(1.1);
+}
+
+.theme-opt:hover {
+    transform: scale(1.1);
+}
+
 .upload-area {
     border: 2px dashed var(--border-color);
     border-radius: var(--radius-lg);
