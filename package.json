@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm run dev --prefix client",
-    "server": "npm run dev --prefix server",
+    "server": "cd server && uvicorn app.main:app --reload --port 5000",
     "build": "npm run build --prefix client",
-    "install-all": "npm install && npm install --prefix client && npm install --prefix server"
+    "install-all": "npm install && npm install --prefix client && cd server && pip install -r requirements.txt"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
