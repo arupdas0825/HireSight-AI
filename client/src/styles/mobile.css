@@ -16,8 +16,11 @@
     .navbar {
         height: 64px;
         margin: 12px;
-        border-radius: var(--radius-full);
-        border: 1px solid var(--border-bright);
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--border-color);
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         box-shadow: var(--shadow-lg);
         top: env(safe-area-inset-top, 0);
         width: calc(100% - 24px);

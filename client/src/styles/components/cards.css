@@ -1,16 +1,17 @@
 .card {
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-normal);
     position: relative;
+    box-shadow: var(--shadow-premium);
 }
 
 .card:hover {
     border-color: var(--border-bright);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-card {
@@ -49,25 +50,35 @@
 
 .btn-primary {
     background: var(--brand-primary);
-    color: white;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    color: var(--text-on-brand);
+    box-shadow: 0 4px 14px var(--brand-glow);
 }
 
 .btn-primary:hover {
-    background: #4f46e5;
+    background: var(--brand-primary-hover);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 6px 20px var(--brand-glow);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-secondary);
     color: var(--text-primary);
     border-color: var(--border-color);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-tertiary);
     border-color: var(--border-bright);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
 }
 
 .btn-lg {

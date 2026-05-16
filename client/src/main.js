@@ -12,12 +12,27 @@ class App {
     init() {
         console.log('HireSight AI Initialized');
         
-        // Apply persisted theme
-        const savedTheme = localStorage.getItem('hs-theme') || 'default';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Apply persisted theme, default to 'light'
+        const savedTheme = localStorage.getItem('hs-theme') || 'light';
+        this.setTheme(savedTheme);
 
         this.router.handleRoute();
         window.addEventListener('popstate', () => this.router.handleRoute());
+    }
+
+    setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('hs-theme', theme);
+        this.currentTheme = theme;
+        // Re-initialize icons after theme change if needed (some icons might change color/style)
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    }
+
+    toggleTheme() {
+        const nextTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+        this.setTheme(nextTheme);
     }
 }
 

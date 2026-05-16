@@ -5,43 +5,24 @@
     min-height: calc(100vh - 200px);
 }
 
-.theme-options {
-    display: flex;
-    gap: var(--space-sm);
-}
-
-.theme-opt {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: var(--transition-fast);
-}
-
-.theme-opt[data-t="default"] { background: #0f172a; border-color: rgba(255,255,255,0.1); }
-.theme-opt[data-t="gradient-black"] { background: #000000; border-color: rgba(255,255,255,0.1); }
-.theme-opt[data-t="white"] { background: #ffffff; border-color: rgba(0,0,0,0.1); }
-
-.theme-opt.active {
-    border-color: var(--brand-primary);
-    transform: scale(1.1);
-}
-
-.theme-opt:hover {
-    transform: scale(1.1);
-}
-
 .upload-area {
-    border: 2px dashed var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--space-2xl) var(--space-lg);
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-normal);
     background: var(--bg-secondary);
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.upload-area:hover {
+    border-color: var(--brand-primary);
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .upload-area:hover {

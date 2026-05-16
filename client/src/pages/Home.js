@@ -10,6 +10,10 @@ export const Home = () => {
                     <div class="nav-links">
                         <a href="#features" class="nav-link">Platform</a>
                         <a href="#solutions" class="nav-link">Solutions</a>
+                        <button class="btn btn-ghost theme-toggle" onclick="app.toggleTheme()" title="Toggle Theme" aria-label="Toggle Dark Mode">
+                            <i data-lucide="sun" class="icon-light"></i>
+                            <i data-lucide="moon" class="icon-dark"></i>
+                        </button>
                         <button class="btn btn-primary" onclick="app.router.navigateTo('/analyzer')">Get Started</button>
                     </div>
                 </div>
@@ -67,4 +71,10 @@ export const Home = () => {
             </section>
         </div>
     `;
+};
+
+Home.init = () => {
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
 };
