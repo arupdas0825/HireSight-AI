@@ -1,211 +1,391 @@
-/* HireSight AI - Premium Mobile Experience Overrides */
+/* ==========================================================================
+   HIRESIGHT AI - PROFESSIONAL SAAS MOBILE EXPERIENCE OVERHAUL
+   (Target viewports: 360px, 375px, 390px, 412px, 430px)
+   ========================================================================== */
 
 @media (max-width: 768px) {
+    /* 1. Global Core & Spacing System overrides */
     :root {
-        --space-page: 1.5rem;
-        --radius-lg: 20px; /* More rounded for mobile */
+        --space-page: 16px;
+        --radius-sm: 12px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-xl: 32px;
     }
 
     body {
         background-color: var(--bg-primary);
-        padding-bottom: env(safe-area-inset-bottom, 20px);
-        overscroll-behavior-y: none; /* Prevent elastic scroll for app feel */
+        padding-bottom: env(safe-area-inset-bottom, 24px);
+        overscroll-behavior-y: none; /* Prevent elastic bounce for native app feel */
+        -webkit-tap-highlight-color: transparent; /* Remove visual tap flash */
     }
 
-    /* Floating Glass Navbar for Mobile */
+    .container {
+        padding: 0 var(--space-page) !important;
+        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Floating Dock-Style Compact Navbar */
     .navbar {
-        height: 64px;
-        margin: 12px;
-        border-radius: var(--radius-xl);
-        border: 1px solid var(--border-color);
-        background: var(--bg-glass);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        box-shadow: var(--shadow-lg);
-        top: env(safe-area-inset-top, 0);
-        width: calc(100% - 24px);
-        left: 0;
-        right: 0;
+        height: 56px !important; /* Super compact and luxurious */
+        margin: 12px 16px !important;
+        border-radius: var(--radius-xl) !important;
+        border: 1px solid var(--border-color) !important;
+        background: var(--bg-glass) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.2) !important;
+        top: env(safe-area-inset-top, 8px) !important;
+        width: calc(100% - 32px) !important;
+        left: 0 !important;
+        right: 0 !important;
     }
 
     .navbar .container {
-        padding: 0 var(--space-lg);
+        padding: 0 16px !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
 
-    .brand-logo { height: 24px; }
-    .logo { font-size: 1.1rem; }
+    .brand-logo {
+        height: 20px !important;
+        width: auto !important;
+    }
 
-    /* Immersive Hero */
+    .logo {
+        font-size: 1.05rem !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    /* Miniaturize navbar interactive states for premium scale balance */
+    .navbar .nav-links {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .navbar .theme-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+    }
+
+    .navbar .theme-toggle i,
+    .navbar .theme-toggle svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .navbar .btn-primary {
+        padding: 6px 14px !important;
+        font-size: 0.8rem !important;
+        min-height: 32px !important;
+        border-radius: var(--radius-full) !important;
+    }
+
+    .navbar .btn-primary::before,
+    .navbar .btn-primary::after {
+        border-radius: var(--radius-full) !important;
+    }
+
+    /* 3. Cinematic Hero Rebuild */
     .hero {
-        padding: 140px 0 60px;
-        text-align: center;
+        padding: 108px 0 40px !important; /* Airy but structured vertical rhythm */
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-badge {
+        padding: 4px 10px !important;
+        font-size: 0.72rem !important;
+        margin-bottom: 12px !important;
+        border-radius: var(--radius-full) !important;
     }
 
     .hero h1 {
-        font-size: 2.25rem;
-        padding: 0 var(--space-sm);
+        font-size: 2.1rem !important; /* Scaled perfectly for compact viewports */
+        line-height: 1.15 !important;
+        letter-spacing: -0.04em !important;
+        margin-bottom: 16px !important;
+        padding: 0 12px !important;
+        word-break: keep-all; /* Keeps lines clean and professional */
     }
 
     .hero-desc {
-        font-size: 1rem;
-        padding: 0 var(--space-md);
+        font-size: 0.95rem !important;
+        line-height: 1.55 !important;
+        color: var(--text-secondary) !important;
+        padding: 0 16px !important;
+        margin-bottom: 24px !important;
+        max-width: 480px !important;
     }
 
-    /* Workspace Container & Header Mobile Spacing (Prevents Navbar overlap) */
+    /* Stacking primary CTA buttons vertically on mobile for native tap comfort */
+    .hero-actions {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-actions .btn {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 14px 20px !important;
+        min-height: 48px !important;
+    }
+
+    /* 4. Glassmorphism Card System (Apple VisionOS / Arc style depth) */
+    .card {
+        border-radius: var(--radius-lg) !important;
+        padding: 20px !important;
+        border: 1px solid var(--border-color) !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        box-sizing: border-box !important;
+    }
+
+    html[data-theme="dark"] .card {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.7) 100%) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5),
+                    0 1px 1px 0 rgba(255, 255, 255, 0.05) inset !important;
+    }
+
+    html[data-theme="light"] .card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(248, 250, 252, 0.8) 100%) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04),
+                    0 1px 1px 0 rgba(255, 255, 255, 0.6) inset !important;
+    }
+
+    /* 5. Workspace Spacing & Stacking Layout */
     .workspace-container {
-        margin-top: 108px !important;
-        margin-bottom: var(--space-xl) !important;
+        margin-top: 92px !important; /* Balances below 56px navbar + margins */
+        margin-bottom: 24px !important;
     }
 
     .workspace-header {
-        margin-bottom: var(--space-lg) !important;
+        margin-bottom: 20px !important;
+        padding: 0 4px !important;
     }
 
     .workspace-header .flex-between {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-sm);
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
     }
 
+    .workspace-header h2 {
+        font-size: 1.6rem !important;
+        letter-spacing: -0.03em !important;
+    }
+
+    /* Native-app side-by-side action button grid */
     .workspace-header .actions {
-        width: 100%;
+        display: flex !important;
+        gap: 8px !important;
+        width: 100% !important;
     }
 
     .workspace-header .actions .btn {
-        width: 100%;
+        flex: 1 !important;
+        width: auto !important;
+        padding: 10px 14px !important;
+        font-size: 0.85rem !important;
+        min-height: 40px !important;
     }
 
-    /* Stacked Dashboard & Flow Reordering */
+    /* Core Flow order */
     .dashboard-layout {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xl) !important; /* Premium spacious stacking */
-        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 
-    /* STEP 1 & 2: Resume Ingestion & Paste Text - FIRST */
+    /* STEP 1: Upload and Ingestion Card (Stack FIRST) */
     .sidebar {
         width: 100% !important;
         order: 1 !important;
     }
 
-    /* STEP 3 & 4: Job Description & CTA - SECOND */
+    /* STEP 2: Job Context Card (Stack SECOND) */
     .main-content {
         width: 100% !important;
         order: 2 !important;
     }
 
-    /* App-style Cards with Premium Glass Depth */
-    .card {
-        border-radius: var(--radius-lg);
-        padding: var(--space-lg);
-        background: var(--bg-glass);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid var(--border-color);
-    }
-
-    /* Subtle Pulsing Glow around the Upload Card to designate it as the primary action */
+    /* 6. Compact iOS-Style Upload Card Rebuild */
     .sidebar .card {
         margin-bottom: 0 !important;
-        animation: upload-card-glow 3s infinite ease-in-out;
-        border: 1px solid var(--border-color);
-        transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+        animation: upload-card-glow-mobile 3s infinite ease-in-out !important;
     }
 
-    /* Enhanced Primary Upload Area */
+    .sidebar .card h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Handcrafted compact dashed glow border */
     .upload-area {
-        padding: var(--space-xl) var(--space-md) !important;
-        border: 2px dashed var(--brand-primary) !important;
-        background: rgba(99, 102, 241, 0.03) !important;
-        border-radius: var(--radius-lg) !important;
-        transition: all var(--transition-normal);
+        padding: 20px 16px !important;
+        border: 2px dashed rgba(99, 102, 241, 0.25) !important;
+        background: rgba(99, 102, 241, 0.015) !important;
+        border-radius: var(--radius-sm) !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
     html[data-theme="dark"] .upload-area {
-        background: rgba(59, 130, 246, 0.05) !important;
+        border-color: rgba(59, 130, 246, 0.2) !important;
+        background: rgba(59, 130, 246, 0.01) !important;
     }
 
-    .upload-area:hover, .upload-area:active {
-        background: rgba(99, 102, 241, 0.06) !important;
-        border-color: var(--brand-primary-hover) !important;
+    /* Floating micro-animation for upload icons */
+    .upload-icon {
+        font-size: 2rem !important;
+        margin-bottom: 6px !important;
+        animation: float-icon-mobile 3s ease-in-out infinite !important;
+        display: inline-block !important;
     }
 
-    /* Compact & High-usability Textareas (Prevents oversized height) */
+    .upload-area p {
+        font-size: 0.85rem !important;
+        font-weight: 500 !important;
+        margin-bottom: 4px !important;
+        color: var(--text-secondary) !important;
+    }
+
+    .upload-area span.text-muted {
+        display: none !important; /* Hide "or" tag on touch devices to conserve space */
+    }
+
+    .upload-area .btn {
+        margin-top: 6px !important;
+        padding: 8px 16px !important;
+        min-height: 36px !important;
+        font-size: 0.8rem !important;
+        width: auto !important;
+        display: inline-flex !important;
+    }
+
+    /* 7. Textarea & Elegant Focus Glowing states */
     textarea {
-        min-height: 120px !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important; /* Prevents iOS auto-zoom on focus */
-        line-height: 1.5 !important;
-        border-radius: var(--radius-md) !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: var(--radius-sm) !important;
+        padding: 12px 14px !important;
+        font-size: 16px !important; /* Lock size to block viewport zooming in Safari */
+        color: var(--text-primary) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        min-height: 100px !important; /* Extremely neat and compact */
+    }
+
+    html[data-theme="light"] textarea {
+        background: rgba(15, 23, 42, 0.015) !important;
+    }
+
+    textarea:focus {
+        border-color: var(--brand-primary) !important;
+        background: var(--bg-surface) !important;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12),
+                    0 4px 12px rgba(99, 102, 241, 0.04) !important;
+        outline: none !important;
     }
 
     .jd-input {
-        min-height: 160px !important;
+        min-height: 130px !important; /* Balanced proportion for long inputs */
     }
 
-    /* Large & Tactile Touch Targets for Mobile */
+    /* 8. Unified Tactile Button Enhancements */
     .btn {
-        width: 100%;
-        padding: 14px 20px !important;
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+        border-radius: var(--radius-sm) !important;
+        min-height: 46px !important;
+        box-sizing: border-box !important;
+    }
+
+    .btn::before,
+    .btn::after {
+        border-radius: var(--radius-sm) !important; /* Ensure premium gradients lock */
+    }
+
+    /* Flagship CTA spacing and size */
+    #analyze-btn {
+        width: 100% !important;
+        padding: 14px 24px !important;
+        min-height: 50px !important;
         font-size: 1rem !important;
-        border-radius: var(--radius-md) !important;
-        min-height: 48px; /* Standard ergonomic height */
+        font-weight: 700 !important;
     }
 
-    .btn-lg {
-        padding: 16px 24px !important;
-        min-height: 54px; /* Premium larger ergonomic height */
-        font-size: 1.0625rem !important;
-    }
-
-    /* Tactile Tap Feedback */
+    /* Touch pressure scaling feedback */
     .btn:active {
-        transform: scale(0.97) !important;
-        transition: transform 0.1s ease;
+        transform: scale(0.96) translateY(0.5px) !important;
+        transition: transform 0.1s ease !important;
     }
 
-    .theme-toggle {
-        width: 44px !important;
-        height: 44px !important;
-    }
-
-    /* Safe Area Spacing */
+    /* 9. Extra Polish & Alignment Fixes */
     .analyzer-page {
-        padding-bottom: calc(var(--space-page) + env(safe-area-inset-bottom, 20px)) !important;
+        padding-bottom: calc(var(--space-page) + env(safe-area-inset-bottom, 24px)) !important;
     }
 
-    /* Custom Mobile Bottom Nav (Optional) */
-    .mobile-nav-shim {
-        height: 80px;
+    /* Company marquee adjustments for mobile */
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 80px !important; /* Prevent masking overlap on compact devices */
     }
 }
 
-/* Tablet Optimizations */
+/* Tablet sizing bridges */
 @media (min-width: 769px) and (max-width: 1024px) {
     .dashboard-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
-    
-    .sidebar { width: 100% !important; }
+    .sidebar, .main-content {
+        width: 100% !important;
+    }
 }
 
-/* Premium Adaptive Pulse Glow Animation */
-@keyframes upload-card-glow {
-    0% {
-        box-shadow: var(--shadow-premium), 
-                    0 0 0 1px var(--border-color),
-                    0 0 10px 0 var(--brand-glow);
+/* 10. Keyframes for Premium Micro-Animations on Mobile */
+
+@keyframes float-icon-mobile {
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        box-shadow: var(--shadow-premium), 
-                    0 0 0 1.5px var(--brand-primary),
-                    0 0 20px 4px var(--brand-glow);
-        border-color: var(--brand-primary);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes upload-card-glow-mobile {
+    0% {
+        box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.15), 
+                    0 0 0 1px var(--border-color);
+    }
+    50% {
+        box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.12), 
+                    0 0 0 1.5px var(--brand-primary);
     }
     100% {
-        box-shadow: var(--shadow-premium), 
-                    0 0 0 1px var(--border-color),
-                    0 0 10px 0 var(--brand-glow);
+        box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.15), 
+                    0 0 0 1px var(--border-color);
     }
 }
