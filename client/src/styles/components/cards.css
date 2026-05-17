@@ -33,55 +33,216 @@
 
 .max-600 { max-width: 600px; margin-left: auto; margin-right: auto; }
 
-/* Primary Button Styling */
+/* ==========================================
+   PREMIUM FUTURISTIC GLOWING BUTTON SYSTEM
+   ========================================== */
+
+/* Base Pill/Capsule Button Structure */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
-    border-radius: var(--radius-md);
+    padding: 12px 26px;
+    border-radius: 999px !important; /* Enforced capsule shape globally */
     font-weight: 600;
     font-size: 0.9375rem;
+    font-family: var(--font-heading);
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-    gap: 8px;
-}
-
-.btn-primary {
-    background: var(--brand-primary);
-    color: var(--text-on-brand);
-    box-shadow: 0 4px 14px var(--brand-glow);
-}
-
-.btn-primary:hover {
-    background: var(--brand-primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px var(--brand-glow);
-}
-
-.btn-secondary {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border-color: var(--border-color);
-}
-
-.btn-secondary:hover {
-    background: var(--bg-tertiary);
-    border-color: var(--border-bright);
-}
-
-.btn-ghost {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
+    overflow: visible; /* Allows neon glows to shine outside */
+    border: none;
     background: transparent;
-    color: var(--text-secondary);
-}
-
-.btn-ghost:hover {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
+    gap: 8px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 .btn-lg {
-    padding: 14px 28px;
+    padding: 16px 36px;
     font-size: 1.0625rem;
+}
+
+/* Premium Hover & Touch Interactions */
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px) scale(0.97);
+}
+
+/* Flagship Glowing Primary Button */
+.btn-primary {
+    color: #ffffff !important; /* Highly readable white text */
+    box-shadow: 0 4px 15px var(--brand-glow),
+                0 0 10px rgba(99, 102, 241, 0.1);
+}
+
+/* Outer Gradient Border with Slowly Rotating Shimmer */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #0ea5e9, #8b5cf6, #2563eb);
+    background-size: 200% 200%;
+    z-index: -2;
+    animation: button-gradient-rotate 4s infinite linear;
+    transition: all 0.3s ease;
+}
+
+/* Inner Glass Surface */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(14, 165, 233, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* Dark Mode Overrides for Primary Button (Deep dark glass capsule) */
+html[data-theme="dark"] .btn-primary::after {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.85) 100%);
+}
+
+html[data-theme="dark"] .btn-primary::before {
+    background: linear-gradient(90deg, #3b82f6, #22d3ee, #a78bfa, #3b82f6);
+    background-size: 200% 200%;
+}
+
+/* Primary Button Hover Actions (Intense Glowing Border) */
+.btn-primary:hover {
+    box-shadow: 0 8px 25px var(--brand-glow),
+                0 0 22px 4px rgba(99, 102, 241, 0.35),
+                inset 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover::before {
+    filter: brightness(1.25);
+}
+
+.btn-primary:hover::after {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(14, 165, 233, 1) 100%);
+}
+
+html[data-theme="dark"] .btn-primary:hover::after {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.95) 100%);
+}
+
+
+/* Refined Glowing Secondary Button */
+.btn-secondary {
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Secondary Button Outer Border */
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 999px;
+    background: var(--border-color);
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+/* Secondary Button Inner Glass Surface */
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 999px;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* Secondary Button Hover States */
+.btn-secondary:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04),
+                0 0 12px 0 var(--brand-glow);
+}
+
+.btn-secondary:hover::before {
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+}
+
+.btn-secondary:hover::after {
+    background: var(--bg-surface);
+}
+
+
+/* Highly Premium Ghost Button */
+.btn-ghost {
+    color: var(--text-secondary) !important;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+    color: var(--text-primary) !important;
+    background: rgba(99, 102, 241, 0.08) !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.04);
+}
+
+
+/* Link-style Text Buttons Reset (Prevents capsules on plain text links) */
+.btn-link {
+    background: transparent !important;
+    border: none !important;
+    color: var(--brand-primary) !important;
+    padding: 4px 8px !important;
+    font-size: 0.875rem !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.btn-link::before, .btn-link::after {
+    display: none !important; /* Deactivates glowing border/glass layers */
+}
+
+.btn-link:hover {
+    color: var(--brand-primary-hover) !important;
+    text-decoration: underline;
+    transform: none !important;
+}
+
+
+/* Micro-interactions for Button Icons */
+.btn i, .btn svg {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn:hover i, .btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* Back navigation button arrows should slide left, not right */
+.btn-ghost:hover i[data-lucide="arrow-left"], 
+.btn-ghost:hover svg.arrow-left {
+    transform: translateX(-4px);
+}
+
+
+/* Rotating Shimmer Keyframe Animation */
+@keyframes button-gradient-rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
