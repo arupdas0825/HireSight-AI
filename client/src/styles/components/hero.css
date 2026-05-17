@@ -43,42 +43,203 @@
     animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
-/* Trusted By Grid */
+/* Premium Enterprise Animated Marquee */
 .trusted-by {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0 var(--space-3xl);
     border-top: 1px solid var(--border-color);
+    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.015));
+    overflow: hidden;
+    position: relative;
 }
 
 .trusted-by p {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     color: var(--text-muted);
     margin-bottom: var(--space-xl);
     text-align: center;
+    -webkit-font-smoothing: antialiased;
 }
 
-.logo-grid {
+/* Masking overlays on left/right for elegant soft fades */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 180px; /* Wide, high-quality fade boundaries */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-surface) 0%, transparent 100%);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-surface) 0%, transparent 100%);
+}
+
+/* Perfect alignment for light and dark core backgrounds */
+html[data-theme="dark"] .marquee-container::before {
+    background: linear-gradient(to right, #020617 0%, transparent 100%);
+}
+html[data-theme="dark"] .marquee-container::after {
+    background: linear-gradient(to left, #020617 0%, transparent 100%);
+}
+
+html[data-theme="light"] .marquee-container::before {
+    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+html[data-theme="light"] .marquee-container::after {
+    background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+/* Horizontal track holding both logo groups */
+.marquee-track {
     display: flex;
-    justify-content: center;
+    width: max-content;
+    animation: marquee-scroll 28s linear infinite;
+    gap: 48px;
+    padding-left: 24px;
+}
+
+/* Gently pause scroll on track hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Duplicate list contents for seamless looping */
+.marquee-content {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-3xl);
-    opacity: 0.5;
-    filter: grayscale(1);
-    transition: var(--transition-normal);
+    gap: 48px;
+    flex-shrink: 0;
 }
 
-.logo-grid:hover {
-    opacity: 0.8;
-    filter: grayscale(0);
+/* Brand Capsule Item */
+.brand-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0.55;
+    cursor: pointer;
+    user-select: none;
+    backdrop-filter: blur(4px);
 }
 
-.logo-grid span {
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: -0.05em;
+/* Light Theme overrides for capsules */
+html[data-theme="light"] .brand-item {
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+/* Subtle default grayscale logos */
+.brand-item svg {
+    filter: grayscale(1) brightness(0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex-shrink: 0;
+}
+
+/* Brand Name Text Styling */
+.brand-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.015em;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Individual Brand Hover State (Re-activates colors) */
+.brand-item:hover {
+    opacity: 1;
+    transform: translateY(-1.5px) scale(1.03);
+    background: rgba(99, 102, 241, 0.05);
+    border-color: rgba(99, 102, 241, 0.15);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.03), 
+                inset 0 0 4px rgba(99, 102, 241, 0.05);
+}
+
+html[data-theme="light"] .brand-item:hover {
+    background: rgba(37, 99, 235, 0.04);
+    border-color: rgba(37, 99, 235, 0.12);
+}
+
+.brand-item:hover .brand-name {
+    color: var(--text-primary);
+}
+
+.brand-item:hover svg {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.05);
+}
+
+/* Brightness compensations for monochrome brands */
+.brand-item.apple:hover svg,
+.brand-item.openai:hover svg {
+    filter: grayscale(0) brightness(1.2);
+}
+
+html[data-theme="light"] .brand-item.apple:hover svg,
+html[data-theme="light"] .brand-item.openai:hover svg {
+    filter: grayscale(1) brightness(0.1);
+}
+
+/* Scrolling Keyframes */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Seamless loop since we duplicate the list inside marquee-track */
+    }
+}
+
+/* Responsive mobile scaling overrides */
+@media (max-width: 768px) {
+    .trusted-by {
+        padding: var(--space-xl) 0 var(--space-2xl);
+    }
+    
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 80px; /* Thinner mask on mobile elements */
+    }
+    
+    .marquee-track {
+        animation-duration: 38s; /* Slower and cleaner scroll speed on touchscreens */
+        gap: 32px;
+    }
+    
+    .marquee-content {
+        gap: 32px;
+    }
+    
+    .brand-item {
+        padding: 6px 14px;
+        gap: 8px;
+    }
+    
+    .brand-name {
+        font-size: 0.85rem;
+    }
 }
 
 @keyframes slideDown {
