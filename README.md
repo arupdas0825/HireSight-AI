@@ -22,8 +22,15 @@
   <p><i>Premium Workspace & Analysis Dashboard</i></p>
   
   <!-- Replace with actual screenshots -->
- <img width="1846" height="867" alt="image" src="https://github.com/user-attachments/assets/8f4f476e-4e23-429d-8dda-a5b9539e5d87" />
-<img width="1627" height="862" alt="image" src="https://github.com/user-attachments/assets/368d8348-5f1a-460e-843f-3e1a4af19198" />
+<img width="1637" height="866" alt="image" src="https://github.com/user-attachments/assets/eb18f611-cf97-4681-aa95-bcda1443d43c" />
+
+<img width="1311" height="832" alt="image" src="https://github.com/user-attachments/assets/6b08a7da-3481-4a9d-a6a8-21cccfa4bfae" />
+
+
+
+
+
+
 
   <p><i>[ Screenshots are placeholders - Update with real visuals ]</i></p>
 </div>
