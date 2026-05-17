@@ -5,13 +5,13 @@
 @import './typography.css';
 @import './layout.css';
 @import './animations.css';
-@import './mobile.css';
-
 /* Component Styles */
 @import './components/navbar.css';
 @import './components/hero.css';
 @import './components/dashboard.css';
 @import './components/cards.css';
+
+@import './mobile.css';
 
 /* Utility Classes */
 .mt-md { margin-top: var(--space-md); }
