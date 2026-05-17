@@ -25,19 +25,22 @@
 
 ### 🖥️ Desktop Landing & Cinematic Workspace
 <div align="center">
-  <img src="screenshots/home-dark.png" alt="HireSight AI Desktop Landing" width="800" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);" />
+ <img width="1637" height="866" alt="image" src="https://github.com/user-attachments/assets/d34012be-9c56-44c7-9929-5ff1b10ea27a" />
+
   <p><i>Cinematic Hero landing featuring the animated, colorful horizontal glass ribbon marquee.</i></p>
 </div>
 
 ### 📊 Recruiter-Grade Analyzer Dashboard
 <div align="center">
-  <img src="screenshots/dashboard.png" alt="HireSight AI Dashboard Workspace" width="800" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);" />
+ <img width="1311" height="832" alt="image" src="https://github.com/user-attachments/assets/c1565225-da3f-4fa3-8a5c-24872d23ebe3" />
+
   <p><i>Immersive VisionOS-inspired workspace presenting real-time keyword calibrators, similarity matrices, and optimization suggestions.</i></p>
 </div>
 
 ### 📱 iOS & Android Flagship App Experience
 <div align="center">
-  <img src="screenshots/mobile-ui.png" alt="HireSight AI Mobile Visual Proportions" width="360" style="border-radius: 24px; border: 4px solid #1e293b;" />
+ <img width="1080" height="2106" alt="WhatsApp Image 2026-05-17 at 12 13 03 PM" src="https://github.com/user-attachments/assets/ff036845-1695-4756-8ab1-d8ead0e5d532" />
+
   <p><i>Mobile native proportions: 56px floating dock navigation, 8px grid alignment, and touch-pressure tap feedbacks.</i></p>
 </div>
 
