@@ -40,7 +40,7 @@
     --radius-xl: 32px;
     --radius-full: 9999px;
 
-    --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

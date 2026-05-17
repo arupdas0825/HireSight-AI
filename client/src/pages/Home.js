@@ -22,8 +22,8 @@ export const Home = () => {
             <header class="hero">
                 <div class="container">
                     <div class="hero-badge">Next-Gen ATS Intelligence</div>
-                    <h1>Your Resume, Optimized for <br/><span class="gradient-text">The Modern Workforce.</span></h1>
-                    <p class="hero-desc">Bypass restrictive ATS filters and impress recruiters with AI-driven resume calibration and semantic matching.</p>
+                    <h1>Precision Resume Intelligence <br/>For <span class="gradient-text">High-Impact Careers.</span></h1>
+                    <p class="hero-desc">HireSight AI analyzes resume structure, ATS compatibility, semantic relevance, and recruiter alignment to maximize interview potential.</p>
                     <div class="hero-actions">
                         <button class="btn btn-primary btn-lg" onclick="app.router.navigateTo('/analyzer')">Start Analysis Now</button>
                         <button class="btn btn-secondary btn-lg">View Sample Report</button>
