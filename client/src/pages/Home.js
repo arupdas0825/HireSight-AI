@@ -4,7 +4,7 @@ export const Home = () => {
             <nav class="navbar">
                 <div class="container">
                     <a href="/" class="logo">
-                        <img src="/logo.png" alt="HireSight AI Logo" class="brand-logo">
+                        <img src="/logo.svg" alt="HireSight AI Logo" class="brand-logo">
                         HireSight<span>AI</span>
                     </a>
                     <div class="nav-links">
