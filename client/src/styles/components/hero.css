@@ -47,9 +47,10 @@
 .trusted-by {
     padding: var(--space-2xl) 0 var(--space-3xl);
     border-top: 1px solid var(--border-color);
-    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.015));
+    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.01));
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .trusted-by p {
@@ -58,25 +59,46 @@
     text-transform: uppercase;
     letter-spacing: 0.25em;
     color: var(--text-muted);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 24px;
     text-align: center;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Masking overlays on left/right for elegant soft fades */
+/* Floating Glassmorphism Strip Container behind the scrolling logos */
 .marquee-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 10px 0;
+    padding: 16px 0;
+    background: var(--bg-glass);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
 
+html[data-theme="dark"] .marquee-container {
+    background: rgba(15, 23, 42, 0.45);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), 
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.03),
+                inset 0 -1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="light"] .marquee-container {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.015),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+                inset 0 -1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Masking overlays on left/right for elegant soft blur fades */
 .marquee-container::before,
 .marquee-container::after {
     content: '';
     position: absolute;
     top: 0;
-    width: 180px; /* Wide, high-quality fade boundaries */
+    width: clamp(100px, 20vw, 240px); /* Wide high-quality blur boundary */
     height: 100%;
     z-index: 2;
     pointer-events: none;
@@ -92,7 +114,7 @@
     background: linear-gradient(to left, var(--bg-surface) 0%, transparent 100%);
 }
 
-/* Perfect alignment for light and dark core backgrounds */
+/* Precise backdrop color matching for clean mask boundaries */
 html[data-theme="dark"] .marquee-container::before {
     background: linear-gradient(to right, #020617 0%, transparent 100%);
 }
@@ -107,138 +129,167 @@ html[data-theme="light"] .marquee-container::after {
     background: linear-gradient(to left, #ffffff 0%, transparent 100%);
 }
 
-/* Horizontal track holding both logo groups */
+/* Horizontal track using 3D hardware transforms */
 .marquee-track {
     display: flex;
     width: max-content;
-    animation: marquee-scroll 28s linear infinite;
-    gap: 48px;
-    padding-left: 24px;
+    animation: marquee-scroll 34s linear infinite; /* Extremely smooth, slightly slower default */
+    gap: 40px;
+    padding-left: 20px;
+    will-change: transform;
 }
 
-/* Gently pause scroll on track hover */
+/* Gently pause scroll on hover */
 .marquee-track:hover {
     animation-play-state: paused;
 }
 
-/* Duplicate list contents for seamless looping */
+/* Duplicate list contents for perfect seamless loop */
 .marquee-content {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 40px;
     flex-shrink: 0;
 }
 
-/* Brand Capsule Item */
+/* Brand Capsule Container */
 .brand-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 8px 18px;
+    gap: 12px;
+    padding: 10px 22px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    opacity: 0.55;
     cursor: pointer;
     user-select: none;
-    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Light Theme overrides for capsules */
+/* Dark Mode brand capsule details */
+html[data-theme="dark"] .brand-item {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.02);
+    opacity: 0.9;
+}
+
+/* Light Mode brand capsule details */
 html[data-theme="light"] .brand-item {
-    background: rgba(15, 23, 42, 0.02);
-    border: 1px solid rgba(15, 23, 42, 0.03);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    opacity: 0.95;
 }
 
-/* Subtle default grayscale logos */
+/* Authentic, colorful SVG logo scaling (No more greyed-out default) */
 .brand-item svg {
-    filter: grayscale(1) brightness(0.9);
+    width: clamp(20px, 2.5vw, 24px) !important;
+    height: clamp(20px, 2.5vw, 24px) !important;
+    filter: none !important; /* Always display vibrant brand-original fills */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     flex-shrink: 0;
 }
 
-/* Brand Name Text Styling */
+/* Brand Name Bold Typography */
 .brand-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: -0.015em;
-    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+    letter-spacing: -0.02em;
+    color: var(--text-primary); /* Fully visible primary typography */
     transition: all 0.3s ease;
 }
 
-/* Individual Brand Hover State (Re-activates colors) */
+/* Hover Elevations & Neon Halo Glows */
 .brand-item:hover {
     opacity: 1;
-    transform: translateY(-1.5px) scale(1.03);
-    background: rgba(99, 102, 241, 0.05);
-    border-color: rgba(99, 102, 241, 0.15);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.03), 
-                inset 0 0 4px rgba(99, 102, 241, 0.05);
+    transform: translate3d(0, -2px, 0) scale(1.04);
+}
+
+html[data-theme="dark"] .brand-item:hover {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 20px var(--brand-glow),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
 }
 
 html[data-theme="light"] .brand-item:hover {
-    background: rgba(37, 99, 235, 0.04);
-    border-color: rgba(37, 99, 235, 0.12);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 24px -6px rgba(99, 102, 241, 0.12),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
 }
 
-.brand-item:hover .brand-name {
-    color: var(--text-primary);
+/* Specific Brand-Inspired subtle glow enhancements on hover */
+.brand-item.nvidia:hover {
+    box-shadow: 0 0 15px rgba(118, 185, 0, 0.15), 0 4px 12px rgba(118, 185, 0, 0.1) !important;
+    border-color: rgba(118, 185, 0, 0.3) !important;
 }
 
-.brand-item:hover svg {
-    filter: grayscale(0) brightness(1);
-    transform: scale(1.05);
+.brand-item.stripe:hover {
+    box-shadow: 0 0 15px rgba(99, 91, 255, 0.15), 0 4px 12px rgba(99, 91, 255, 0.1) !important;
+    border-color: rgba(99, 91, 255, 0.3) !important;
 }
 
-/* Brightness compensations for monochrome brands */
-.brand-item.apple:hover svg,
-.brand-item.openai:hover svg {
-    filter: grayscale(0) brightness(1.2);
+.brand-item.google:hover {
+    box-shadow: 0 0 15px rgba(66, 133, 244, 0.1), 0 4px 12px rgba(66, 133, 244, 0.08) !important;
+    border-color: rgba(66, 133, 244, 0.25) !important;
 }
 
-html[data-theme="light"] .brand-item.apple:hover svg,
-html[data-theme="light"] .brand-item.openai:hover svg {
-    filter: grayscale(1) brightness(0.1);
+.brand-item.meta:hover {
+    box-shadow: 0 0 15px rgba(0, 100, 224, 0.15), 0 4px 12px rgba(0, 100, 224, 0.1) !important;
+    border-color: rgba(0, 100, 224, 0.3) !important;
 }
 
-/* Scrolling Keyframes */
+.brand-item.netflix:hover,
+.brand-item.adobe:hover {
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.15), 0 4px 12px rgba(229, 9, 20, 0.1) !important;
+    border-color: rgba(229, 9, 20, 0.3) !important;
+}
+
+/* Adaptive styles for Apple and OpenAI monochrome logos */
+.brand-item.apple svg,
+.brand-item.openai svg {
+    fill: currentColor !important;
+    color: var(--text-primary) !important;
+}
+
+/* Smooth Scrolling keyframe using 3D Hardware Accelerated Translate */
 @keyframes marquee-scroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%); /* Seamless loop since we duplicate the list inside marquee-track */
+        transform: translate3d(-50%, 0, 0); /* Perfect seamless loop repeating exactly half of the double-track width */
     }
 }
 
-/* Responsive mobile scaling overrides */
+/* Responsive Scaling Overrides for Mobile devices */
 @media (max-width: 768px) {
     .trusted-by {
         padding: var(--space-xl) 0 var(--space-2xl);
     }
     
+    .marquee-container {
+        padding: 12px 0;
+    }
+
     .marquee-container::before,
     .marquee-container::after {
-        width: 80px; /* Thinner mask on mobile elements */
+        width: 80px; /* Thinner edge masks on mobile */
     }
     
     .marquee-track {
-        animation-duration: 38s; /* Slower and cleaner scroll speed on touchscreens */
-        gap: 32px;
+        animation-duration: 22s; /* Mobile is slightly faster but highly smooth */
+        gap: 24px;
+        padding-left: 12px;
     }
     
     .marquee-content {
-        gap: 32px;
+        gap: 24px;
     }
     
     .brand-item {
-        padding: 6px 14px;
+        padding: 8px 16px;
         gap: 8px;
-    }
-    
-    .brand-name {
-        font-size: 0.85rem;
     }
 }
 
